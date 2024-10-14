@@ -1,0 +1,17 @@
+img {
+  width: 30%;
+  margin: 1.6666%;
+}
+
+/* 30 + 30 + 30 --> 10% left ||  6 sides spots for margin 10% / 6  = 1.6666% 
+or I can just use calc(10%/6);*/
+
+nav {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  border-bottom: 2px solid #f1f1f1; 
+  width: 30%;
+  margin-left: 1.6666%;
+  padding: 1.2em 0;
+}
