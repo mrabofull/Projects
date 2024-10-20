@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Little Lemon logo">
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>Book a table</h1>
+    <!-- <form method="POST">
+      <fieldset id="size">
+        <label>
+          <input type="radio" name="size" value="2"> 2-person table
+        </label>
+        <label>
+          <input type="radio" name="size" value="4" checked> 4-person table
+        </label>
+        <label>
+          <input type="radio" name="size" value="6"> 6-person table
+        </label>
+      </fieldset>
+      <fieldset id="location">
+        <label>
+          <input type="radio" name="location" value="indoors" checked> Indoors
+        </label>
+        <label>
+          <input type="radio" name="location" value="outdoors"> Outdoors
+        </label>
+      </fieldset>
+      <button type="submit">Book table</button>
+    </form> -->
+
+    <form method="POST">
+      <div>
+        <label for="booking_date">Booking Date</label>
+        <input type="date" name="booking_date" id="booking_date">
+      </div>
+      <div>
+        <label for="booking_people">Number of People</label>
+        <input type="range" name="booking_people" id="booking_people" min="1" max="10" value="4" oninput="this.nextElementSibling.value = this.value">
+        <output>4</output>
+      </div>
+      <div>
+        <!-- The user is still able to enter a location that isn't from the datalist -->
+        <label for="booking_location">Location</label>
+        <input id="booking_location" name="booking_location" list="locations">
+        <datalist id="locations">
+          <option value="Downtown"></option>
+          <option value="Uptown"></option>
+        </datalist>
+      </div>
+      <div>
+        <button type="submit">Book table</button>
+      </div>
+    </form>
+
+    <!-- lengend defines a caption for the fieldset elemnt -->
+    <!-- <fieldset> 
+      <legend>Personal Info</legend> 
+      <label for="fname">First name:</label><br> 
+      <input type="text" id="fname" name="fname" value="John"><br> 
+      <label for="lname">Last name:</label><br> 
+      <input type="text" id="lname" name="lname" value="Doe"><br> 
+    </fieldset> 
+    
+    <fieldset> 
+      <legend>Qualificaiton</legend> 
+      <label for="pdegree">Primary degree:</label><br> 
+      <input type="text" id="pdegree" name="degree" value="Masters"><br> 
+      <label for="fos">Last name:</label><br> 
+      <input type="text" id="fos" name="field" value="Psychology"><br> 
+    </fieldset>  -->
+  </main>
+  <footer>
+    <p>Copyright Little lemon</p>
+  </footer>
+</body>
+</html>

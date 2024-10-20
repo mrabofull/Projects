@@ -1,0 +1,47 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    text-align: center;
+}
+#container {
+    background-color: #003049;
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    border: 5px solid #003049;
+    display: flex;
+    /* flex-direction: row-reverse; */
+    flex-direction: row; /* By default */
+    /* flex-direction: column;
+    flex-direction: column-reverse; */
+    /* justify-content: flex-start; */
+    /* justify-content: flex-end; */
+    /* justify-content: center; */
+    /* justify-content: space-between; */
+    /* justify-content: space-around; */
+    /* justify-content: space-evenly; */
+    /* flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap; */
+    /* flex-wrap: wrap-reverse; */
+    /* flex-wrap: nowrap; */
+    /* align-items: flex-start; */
+    /* align-items: flex-end; */
+    /* align-items: center; */
+    /* align-items: baseline; Lets say in each div we have the 1 char and all of the divs make the world Hello, using baseline when the heights of the divs are different now its going to use the baseline of our text to align those elements */
+    
+    /* align-items: flex-end;
+    flex-wrap: wrap-reverse; Its like flex-start in simple situations*/
+
+    /* flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; */
+
+}
+
+#container div {
+    width: 200px;
+    height: 200px;
+}
