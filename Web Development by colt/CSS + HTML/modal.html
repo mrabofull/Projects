@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    button {
+      background-color: none;
+      border: none;
+      font: inherit;
+      cursor: pointer;
+    }
+    dialog {
+      margin: auto;
+      padding: 2rem;
+      border: none;
+      border-radius: 6px;
+      opacity: 0;
+      transition: all 0.3s allow-discrete;
+    }
+
+    dialog[open] {
+      opacity: 1;
+    }
+
+    @starting-style {
+      dialog[open] {
+        opacity: 0;
+      }
+    }
+
+    dialog::backdrop {
+      background-color: rgba(0,0,0,0);
+      transition: all 0.3 allow-discrete;
+    }
+
+    dialog[open]::backdrop {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    @starting-style {
+      dialog[open]::backdrop {
+        background-color: rgba(0,0,0,0);
+      }
+    }
+
+    .btn {
+      background-color: black;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    .description {
+      max-width: 40ch;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <button id="open-modal">Open modal</button>
+  <dialog id="dialog">
+    <h2>Hello World</h2>
+    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, dolor iste? Quis dolorum obcaecati quas voluptate, earum nulla perferendis veritatis debitis non doloribus, minus maiores, placeat repudiandae quo laboriosam blanditiis.</p>
+    <button id="close-modal" class="btn" autofocus>Close</button>
+  </dialog>
+
+  <!-- <dialog id="myDialog">
+    <p>This is a dialog box!</p>
+    <button onclick="document.getElementById('myDialog').close()">Close</button>
+  </dialog>
+  
+  <button onclick="document.getElementById('myDialog').showModal()">Open Dialog</button>
+   -->
+
+   <script>
+    const openBtn = document.querySelector('#open-modal');
+    const dialog = document.querySelector('#dialog');
+    const closeBtn = document.querySelector('#close-modal');
+
+    openBtn.addEventListener('click', () => dialog.showModal());
+    closeBtn.addEventListener('click', () => dialog.close());
+
+    dialog.addEventListener('click', event => {
+      const rect = dialog.getBoundingClientRect();
+      const isInDialog =
+        event.clientX >= rect.left &&
+        event.clientX <= rect.right &&
+        event.clientY >= rect.top &&
+        event.clientY <= rect.bottom;
+
+        if(!isInDialog) {
+          dialog.close();
+        }
+    });
+   </script>
+</body>
+</html>
