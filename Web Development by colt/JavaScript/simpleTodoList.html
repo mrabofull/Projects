@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+  </head>
+  <body>
+    <h1>Todo List</h1>
+
+    <ul>
+      <li>"new" - Add A Todo</li>
+      <li>"list" - List All Todos</li>
+      <li>"delete" -remove Specific Todo</li>
+      <li>"quit" - Quit App</li>
+    </ul>
+    <script>
+      let input = prompt("What would you like to do?");
+      const todos = ['Collect Cheicken Eggs', 'Clean Litter Box']
+      while(input !== 'quit' && input !== 'q') {
+        if(input === 'list') {
+          console.log('*********************');
+          for (let i = 0; i < todos.length; i++) {
+            console.log(`${i}: ${todos[i]}`);
+          }
+          console.log('*********************');
+        }
+        else if (input === 'new') {
+          const newTodo = prompt('Ok, what is the new todo?');
+          todos.push(newTodo);
+          console.log(`${newTodo} added to the list!`);
+        } else if (input === 'delete') {
+          const index = parseInt(prompt('Ok, enter an index to delete:'));
+          if(!Number.isNan(index)) {
+            const deleted = todos.splice(index, 1);
+            console.log(`Ok, deleted ${deleted[0]}`);
+          } else {
+            console.log('Unknown index');
+          }
+        }
+        input = prompt("What would you like to do?");
+      }
+      console.log("Ok, you quit the app");
+    </script>
+  </body>
+</html>
